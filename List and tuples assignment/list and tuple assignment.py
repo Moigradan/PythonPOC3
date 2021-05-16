@@ -27,32 +27,32 @@ def menu():
 
 # storing products and their sizes in lists instead of tuples, so they can be added/removed by the user
 
-shopping_list = ["Shirt", "Scarf", "Glove", "Jacket", "Boots", "Hat"]
-shopping_list_size = ["XS", "S", "M", "L", "XL", "XXL"]
+products_list = ["Shirt", "Scarf", "Glove", "Jacket", "Boots", "Hat"]
+products_list_size = ["XS", "S", "M", "L", "XL", "XXL"]
 
 # function for displaying when called if user pressed 1
 
 def displayList():
-     for n, s in zip(shopping_list,shopping_list_size): # Zip function used to print out the product with its size
+     for n, s in zip(products_list, products_list_size): # Zip function used to print out the product with its size
          print("Product: " + n, ", size: ", s)
 
 # function for adding item when user pressed 2
 
 def addItem():
     item = input("Enter the item you wish to add to product inventory: ")
-    shopping_list.append(item)
+    products_list.append(item)
     size = input("Enter the size of "+ item + ": ")
-    shopping_list_size.append(size)
+    products_list_size.append(size)
     print("Product " + item + " size " + size + " has been added and is now available for purchase")
 
 def SellItem():
     item = input("What item do you wish to sell? ")
-    if item in shopping_list: # checking if the selected item exists
-        shopping_list.remove(item)
+    if item in products_list: # checking if the selected item exists
+        products_list.remove(item)
         print(item + " Has been selected")
     size = input("What size? ")
-    if size in shopping_list_size: # if so, what about the size of the product?
-        shopping_list_size.remove(size)
+    if size in products_list_size: # if so, what about the size of the product?
+        products_list_size.remove(size)
         print("Product " +item + " size " + size + " has been sold")
     else:
          print("Item does not exist")
